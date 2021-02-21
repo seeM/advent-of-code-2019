@@ -16,10 +16,7 @@ print(total_fuel)
 
 def get_recursive_fuel(mass: int) -> int:
     fuel = max(0, mass // 3 - 2)
-    if fuel == 0:
-        return fuel
-    else:
-        return fuel + get_recursive_fuel(fuel)
+    return fuel + get_recursive_fuel(fuel) if fuel > 0 else 0
 
 
 assert get_recursive_fuel(2) == 0
